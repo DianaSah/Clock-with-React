@@ -9,15 +9,12 @@ class Clock extends React.Component {
     }
 
     componentDidMount() {
-        this.intervalID = setInterval(
+        setInterval(
             () => this.setState({
                 time: new Date().toLocaleString('en-GB', {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'numeric', minute:'numeric', second:'numeric'})
             }),
             1000
         );
-    }
-      componentWillUnmount() {
-        clearInterval(this.intervalID);
     }
     
     render() { 
